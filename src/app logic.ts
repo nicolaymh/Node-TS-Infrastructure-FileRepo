@@ -5,7 +5,7 @@ let outPutMessage = '';
 const base = 5;
 const headerMessage = `
 ================================
-        Table of 5
+        Table of ${ base }
 ================================\n
 `;
 
