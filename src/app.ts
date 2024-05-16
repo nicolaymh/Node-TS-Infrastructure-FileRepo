@@ -1,8 +1,5 @@
 import { yarg } from './config/plugins/args.plugin';
-
-// console.log(process.argv);
-
-// console.log(yarg.b);
+import { ServerApp } from './presentation/server-app';
 
 
 (async() => {
@@ -11,8 +8,11 @@ import { yarg } from './config/plugins/args.plugin';
 
 })();
 
+
 async function main() {
 
+    const { b:base, l:limit, s:showTable } = yarg;
 
+    ServerApp.run({ base, limit, showTable });
 
 }
