@@ -15,6 +15,4 @@ async function main() {
 
     ServerApp.run({ base, limit, showTable, fileName, fileDestination });
 
-    // console.log({ base, limit, showTable, name, destination });
-
 }
