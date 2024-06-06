@@ -1,4 +1,4 @@
-import { yarg } from './config/plugins/args.plugin';
+import { getYargsInstance } from './config/plugins/args.plugin';
 import { ServerApp } from './presentation/server-app';
 
 
@@ -11,7 +11,7 @@ import { ServerApp } from './presentation/server-app';
 
 async function main() {
 
-    const { b:base, l:limit, s:showTable, n:fileName, d:fileDestination } = yarg;
+    const { b:base, l:limit, s:showTable, n:fileName, d:fileDestination } = getYargsInstance(process.argv);
 
     ServerApp.run({ base, limit, showTable, fileName, fileDestination });
 
