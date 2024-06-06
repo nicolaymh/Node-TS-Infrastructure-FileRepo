@@ -3,12 +3,16 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 export const checkBase = (argv: {  b: number; }) => {
-    if ( argv.b < 1 ) throw 'The base must be greater than 0';
 
-    return true;
+        if ( argv.b < 1 ) throw 'The base must be greater than 0';
+
+        return true;
 }
 
-export const yarg = yargs(hideBin(process.argv))
+export const getYargsInstance = (args: string[]) => {
+
+    return yargs(hideBin(args))
+
     .option('b', {
         alias: 'base',
         type: 'number',
@@ -39,6 +43,11 @@ export const yarg = yargs(hideBin(process.argv))
         describe: 'File destination'
     })
     .check(checkBase)
+    .fail((msg) => {
+        if ( msg ) throw new Error( msg );
+    })
     .parseSync()
+
+};
 
 
