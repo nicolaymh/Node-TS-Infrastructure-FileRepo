@@ -11,6 +11,8 @@ export const checkBase = (argv: {  b: number; }) => {
 
 export const getYargsInstance = (args: string[]) => {
 
+    console.log('getYargsInstance args:', args);
+
     return yargs(hideBin(args))
 
     .option('b', {
