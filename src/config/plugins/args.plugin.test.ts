@@ -6,6 +6,8 @@ const runCommand = async( args: string[] ) => {
 
     const { yarg } = await import('./args.plugin');
 
+    console.log(yarg)
+
     return yarg;
 }
 
@@ -35,10 +37,10 @@ describe('Test args.plugin.ts', () => {
 
     test('should return configuration with custom values', async() => {
 
-        const argv = await runCommand([ '-b', '5', '-l', '20', '-s', 'true', '-n', 'table', '-d', 'files' ]);
+        const argv = await runCommand([ '-b', '10', '-l', '20', '-s', 'true', '-n', 'table', '-d', 'files' ]);
 
         expect( argv ).toEqual( expect.objectContaining({
-            b: 5,
+            b: 10,
             l: 20,
             s: true,
             n: 'table',

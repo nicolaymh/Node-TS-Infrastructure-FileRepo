@@ -19,7 +19,7 @@ describe('CreateTableUseCase', () => {
 
     })
 
-    test('should create table with suctom values', () => {
+    test('should create table with custom values', () => {
 
         const options = {
             base: 3,
