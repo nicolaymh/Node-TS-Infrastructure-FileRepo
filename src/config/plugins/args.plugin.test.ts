@@ -11,17 +11,12 @@ const runCommand = (args: string[]) => {
 
 describe('Test args.plugin.ts', () => {
     const originalArgv = process.argv;
-    let consoleErrorSpy: jest.SpyInstance;
 
     beforeEach(() => {
         process.argv = [...originalArgv];
         jest.resetModules();
-        consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
-    afterEach(() => {
-        consoleErrorSpy.mockRestore();
-    });
 
     test('should return default values', () => {
         const argv = runCommand(['-b', '5']);
